@@ -1,2 +1,24 @@
-<h1> Home </h1>
-<p>This is the {{ title }} page</p>
+<div id="skip"><a href="#mainContent">Skip to Main Content</a></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 col-sm-12">
+            <h1 class="text-center">
+                {{title}}
+            </h1>
+            <br >
+            <div class="row">
+                <h4>Rooms:</h4> 
+                <div class="col-md-6 offset-md-1">
+                    <input type="button" class="btn btn-success btn-block" onclick="createRoom()" value="Create New Room"></input>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div role="main" id="mainContent">
+        {{#each rooms}}
+        <div class="col-md-6 offset-md-3 col-sm-12">
+            <button id={{this.id}} type="button" class="btn btn-primary btn-block" onclick="goToRoom({{this.id}})">{{this.name}}</button>
+        </div>
+        {{/each}}
+    </div>
+</div>

@@ -1,6 +1,20 @@
-<h1> Room </h1>
-<p>This is a demo of chatroom page</p>
-<p>
-    The room you are visiting is {{ roomName }}
-</p>
-<p>To generate a new room, here is the room id: {{ newRoomId }}</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" crossorigin="anonymous"></script>
+<div id="skip"><a href="#chat-area">Skip to Main Content</a></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 col-sm-12">
+            <h1 class="text-center" >
+                Room {{roomName}}
+            </h1>
+            <input type="text" id="name-field" class="form-control" placeholder="What is your name?">
+            <br>
+            <div id="chat-area" class="card" style="overflow: scroll; height: 350px;" role="main">
+                <ul id="chat" style="list-style: none;">
+                </ul>
+            </div>
+            <br >
+            <textarea id="input" class="form-control" placeholder="What are you thinking?"></textarea>
+        </div>
+    </div>
+</div>
+<script src="js/room.js"></script>

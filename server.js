@@ -7,6 +7,7 @@ const path = require('path');
 // import handlers
 const homeHandler = require('./controllers/home.js');
 const roomHandler = require('./controllers/room.js');
+const db = require('./database.js');
 
 const app = express();
 const port = 8080;
@@ -25,10 +26,15 @@ app.set('view engine', 'hbs');
 // set up stylesheets route
 
 // TODO: Add server side code
+db.init();
 
 // Create controller handlers to handle requests at each endpoint
 app.get('/', homeHandler.getHome);
 app.get('/:roomName', roomHandler.getRoom);
+app.get('/:roomName/messages', roomHandler.getMessages);
+
+app.post('/:roomName/messages', roomHandler.postMessage);
+app.post('/create', roomHandler.createRoom);
 
 // NOTE: This is the sample server.js code we provided, feel free to change the structures
 
