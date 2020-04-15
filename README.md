@@ -30,3 +30,5 @@ room.
 ## Database Setup
 
 <!-- required if you use custom MySQL setup instead of the MySQL database provided or if you use other databases like SQLite, PostgreSQL... -->
+
+I used MongoDB
